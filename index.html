@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width,
+                 initial-scale=1.0,
+                 maximum-scale=1.0,
+                 user-scalable=no"
+    >
+
+    <meta
+        name="theme-color"
+        content="#111827"
+    >
+
+    <title>
+        English Vocabulary
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <link
+        rel="manifest"
+        href="manifest.json"
+    >
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- HEADER -->
+
+    <header class="topbar">
+
+        <div>
+
+            <h1>
+                English Vocabulary
+            </h1>
+
+            <div
+                id="modeTitle"
+                class="mode-title"
+            >
+                Learn
+            </div>
+
+        </div>
+
+        <div class="mode-switch">
+
+            <button
+                id="learnModeBtn"
+                class="mode-btn active"
+            >
+                Learn
+            </button>
+
+            <button
+                id="revisionModeBtn"
+                class="mode-btn"
+            >
+                Revision
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- STATS -->
+
+    <section class="stats">
+
+        <div class="stat">
+
+            <span
+                id="activeCount"
+                class="stat-number"
+            >
+                0
+            </span>
+
+            <span class="stat-label">
+                Active
+            </span>
+
+        </div>
+
+        <div class="stat">
+
+            <span
+                id="remainingCount"
+                class="stat-number"
+            >
+                0
+            </span>
+
+            <span class="stat-label">
+                Remaining
+            </span>
+
+        </div>
+
+        <div class="stat">
+
+            <span
+                id="learnedCount"
+                class="stat-number"
+            >
+                0
+            </span>
+
+            <span class="stat-label">
+                Learned
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- REVISION SELECTOR -->
+
+    <section
+        id="revisionSelector"
+        class="revision-selector hidden"
+    >
+
+        <div class="revision-title">
+            Revision
+        </div>
+
+        <div class="revision-options">
+
+            <button
+                class="revision-btn"
+                data-count="50"
+            >
+                50 Cards
+            </button>
+
+            <button
+                class="revision-btn"
+                data-count="100"
+            >
+                100 Cards
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- CARD AREA -->
+
+    <main class="card-area">
+
+        <div
+            id="cardCounter"
+            class="card-counter"
+        >
+            0 / 25
+        </div>
+
+        <div
+            id="flashCard"
+            class="flash-card"
+        >
+
+            <div
+                id="cardContent"
+                class="card-content"
+            >
+
+                <div class="loading">
+                    Loading...
+                </div>
+
+            </div>
+
+        </div>
+
+        <div
+            id="gestureHint"
+            class="gesture-hint"
+        >
+            ↑ ↓ Next &nbsp; • &nbsp;
+            → Details &nbsp; • &nbsp;
+            ← Learned
+        </div>
+
+    </main>
+
+
+    <!-- MESSAGE -->
+
+    <div
+        id="message"
+        class="message hidden"
+    ></div>
+
+</div>
+
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+
+</body>
+
+</html>
