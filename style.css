@@ -1,0 +1,561 @@
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f3f4f6;
+
+    color: #111827;
+
+    overscroll-behavior: none;
+}
+
+
+body {
+    min-height: 100vh;
+}
+
+
+button {
+    font-family: inherit;
+}
+
+
+.app {
+    width: 100%;
+    max-width: 900px;
+
+    margin: auto;
+
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================================================
+   TOP BAR
+   ========================================================= */
+
+.topbar {
+
+    padding:
+        18px
+        18px
+        12px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.topbar h1 {
+
+    margin: 0;
+
+    font-size: 22px;
+}
+
+
+.mode-title {
+
+    margin-top: 4px;
+
+    font-size: 13px;
+
+    color: #6b7280;
+}
+
+
+.mode-switch {
+
+    display: flex;
+
+    gap: 6px;
+}
+
+
+.mode-btn {
+
+    border: none;
+
+    background: #e5e7eb;
+
+    color: #374151;
+
+    padding:
+        8px
+        12px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+}
+
+
+.mode-btn.active {
+
+    background: #111827;
+
+    color: white;
+}
+
+
+/* =========================================================
+   STATS
+   ========================================================= */
+
+.stats {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    padding:
+        0
+        15px
+        10px;
+}
+
+
+.stat {
+
+    flex: 1;
+
+    max-width: 130px;
+
+    text-align: center;
+
+    background: white;
+
+    border-radius: 12px;
+
+    padding: 8px;
+}
+
+
+.stat-number {
+
+    display: block;
+
+    font-size: 18px;
+
+    font-weight: bold;
+}
+
+
+.stat-label {
+
+    display: block;
+
+    margin-top: 2px;
+
+    font-size: 11px;
+
+    color: #6b7280;
+}
+
+
+/* =========================================================
+   REVISION
+   ========================================================= */
+
+.revision-selector {
+
+    text-align: center;
+
+    padding:
+        5px
+        15px
+        12px;
+}
+
+
+.revision-title {
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
+
+
+.revision-options {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+}
+
+
+.revision-btn {
+
+    border: 1px solid #d1d5db;
+
+    background: white;
+
+    padding:
+        9px
+        18px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+}
+
+
+.revision-btn.active {
+
+    background: #111827;
+
+    color: white;
+}
+
+
+/* =========================================================
+   CARD
+   ========================================================= */
+
+.card-area {
+
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding:
+        15px;
+}
+
+
+.card-counter {
+
+    margin-bottom: 12px;
+
+    font-size: 13px;
+
+    color: #6b7280;
+}
+
+
+.flash-card {
+
+    width: min(
+        92vw,
+        650px
+    );
+
+    min-height: 390px;
+
+    background: white;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 15px 45px
+        rgba(
+            0,
+            0,
+            0,
+            0.10
+        );
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 35px;
+
+    touch-action: none;
+
+    user-select: none;
+
+    cursor: grab;
+
+    transition:
+        transform 0.18s ease,
+        opacity 0.18s ease;
+}
+
+
+.flash-card.dragging {
+
+    transition: none;
+
+    cursor: grabbing;
+}
+
+
+.card-content {
+
+    width: 100%;
+
+    text-align: center;
+}
+
+
+.word-pair {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 30px;
+
+    align-items: center;
+}
+
+
+.word {
+
+    font-size:
+        clamp(
+            30px,
+            8vw,
+            58px
+        );
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+    word-break: break-word;
+}
+
+
+.details {
+
+    text-align: left;
+
+    width: 100%;
+}
+
+
+.detail-word {
+
+    text-align: center;
+
+    font-size: 30px;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
+
+
+.meaning {
+
+    text-align: center;
+
+    font-size: 19px;
+
+    margin-bottom: 15px;
+
+    direction: rtl;
+}
+
+
+.detail-section {
+
+    margin:
+        15px
+        0;
+
+    padding-top: 12px;
+
+    border-top:
+        1px solid #e5e7eb;
+}
+
+
+.detail-label {
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+    color: #6b7280;
+
+    margin-bottom: 5px;
+
+    letter-spacing: 0.5px;
+}
+
+
+.detail-text {
+
+    font-size: 16px;
+
+    line-height: 1.6;
+}
+
+
+.difference {
+
+    background: #f9fafb;
+
+    padding: 14px;
+
+    border-radius: 12px;
+
+    line-height: 1.6;
+}
+
+
+.gesture-hint {
+
+    margin-top: 16px;
+
+    font-size: 12px;
+
+    color: #9ca3af;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   MESSAGES
+   ========================================================= */
+
+.message {
+
+    position: fixed;
+
+    left: 50%;
+
+    bottom: 25px;
+
+    transform:
+        translateX(-50%);
+
+    background: #111827;
+
+    color: white;
+
+    padding:
+        12px
+        18px;
+
+    border-radius: 12px;
+
+    font-size: 14px;
+
+    z-index: 100;
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+
+.loading {
+
+    color: #6b7280;
+
+    font-size: 18px;
+}
+
+
+.empty {
+
+    text-align: center;
+
+    color: #6b7280;
+}
+
+
+.empty h2 {
+
+    color: #111827;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (
+    max-width: 600px
+) {
+
+    .topbar {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .mode-switch {
+
+        width: 100%;
+    }
+
+
+    .mode-btn {
+
+        flex: 1;
+    }
+
+
+    .flash-card {
+
+        min-height: 55vh;
+
+        padding:
+            25px
+            18px;
+
+        border-radius: 22px;
+    }
+
+
+    .word {
+
+        font-size: 40px;
+    }
+
+
+    .detail-word {
+
+        font-size: 27px;
+    }
+
+
+    .meaning {
+
+        font-size: 18px;
+    }
+}
